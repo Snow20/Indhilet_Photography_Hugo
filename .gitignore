@@ -1,0 +1,9 @@
+# Hugo build output & cache
+public/
+resources/_gen/
+.hugo_build.lock
+
+# OS & Editor files
+.DS_Store
+.vscode/
+*.log

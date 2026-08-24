@@ -1,0 +1,26 @@
+[nav_inicio]
+other = "INICIO"
+
+[nav_sobre_mi]
+other = "SOBRE MIN"
+
+[nav_portafolio]
+other = "PORTAFOLIO"
+
+[nav_contacto]
+other = "CONTACTO"
+
+[about_title]
+other = "Son Nicole Leones..."
+
+[about_text]
+other = "Son Nicole Indhilet Leones Gómez, fotógrafa en formación que está cursando segundo ano do Ciclo Superior de Fotografía na Escola de Arte Superior e Deseño Pablo Picasso en A Coruña."
+
+[privacy_accept]
+other = "Li e acepto a"
+
+[privacy_link]
+other = "política de privacidade"
+
+[contact_btn]
+other = "Enviar"

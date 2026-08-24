@@ -1,0 +1,26 @@
+[nav_inicio]
+other = "HOME"
+
+[nav_sobre_mi]
+other = "ABOUT ME"
+
+[nav_portafolio]
+other = "PORTFOLIO"
+
+[nav_contacto]
+other = "CONTACT"
+
+[about_title]
+other = "I am Nicole Leones..."
+
+[about_text]
+other = "I am Nicole Indhilet Leones Gómez, a training photographer currently in the second year of the Higher Degree in Photography at the Pablo Picasso Higher Art and Design School in A Coruña."
+
+[privacy_accept]
+other = "I have read and accept the"
+
+[privacy_link]
+other = "privacy policy"
+
+[contact_btn]
+other = "Send"

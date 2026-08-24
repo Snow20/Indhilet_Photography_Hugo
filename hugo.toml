@@ -1,0 +1,18 @@
+baseURL = 'https://ejemplo.com/'
+languageCode = 'es-es'
+defaultContentLanguage = 'es'
+title = 'INDHILET | Portafolio'
+
+[languages]
+  [languages.es]
+    languageName = 'ES'
+    contentDir = 'content/es'
+    weight = 1
+  [languages.gl]
+    languageName = 'GAL'
+    contentDir = 'content/gl'
+    weight = 2
+  [languages.en]
+    languageName = 'EN'
+    contentDir = 'content/en'
+    weight = 3

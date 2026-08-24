@@ -1,0 +1,1110 @@
+/* =========================================
+   1. VARIABLES DE COLOR (Paleta Requerida)
+   ========================================= */
+:root {
+    /* Fondos */
+    --color-bg-main: #0a0a0a;
+    /* Negro muy oscuro (fondo principal) */
+    --color-bg-darker: #050505;
+    /* Negro casi absoluto (footer, navbar en móvil) */
+
+    /* Acentos */
+    --color-accent-red: #da251d;
+    /* Rojo vibrante (botones, iconos, overlays) */
+    --color-accent-red-hover: #b51e18;
+    /* Rojo más oscuro para efectos hover */
+
+    /* Texto */
+    --color-text-main: #e0e0e0;
+    /* Gris muy claro (texto principal) */
+    --color-text-light: #ffffff;
+    /* Blanco (títulos, navbar) */
+    --color-text-muted: #888888;
+    /* Gris medio (texto secundario) */
+
+    /* Bordes y Líneas */
+    --color-border: #333333;
+    /* Gris oscuro para líneas divisorias */
+}
+
+/* =========================================
+   2. ESTILOS GENERALES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Suaviza el desplazamiento al usar enlaces de anclaje (#id) */
+    scroll-behavior: smooth;
+    font-size: 16px;
+    /* Tamaño de fuente base */
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Evita el desplazamiento horizontal */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    color: var(--color-text-light);
+    letter-spacing: 1px;
+}
+
+/* Contenedor principal con espaciado lateral */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Títulos de sección estándar */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   3. ESTILOS SECCIÓN HERO (CABECERA)
+   ========================================= */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Ocupa todo el alto de la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Imagen de fondo en mosaico */
+    background-image: url('images/hero-mosaic.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Efecto paralaje opcional */
+}
+
+/* Capa oscura superpuesta para asegurar legibilidad del título */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Negro con transparencia */
+    z-index: 1;
+}
+
+/* Barra de Navegación */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    /* Asegura que esté por encima del overlay */
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    /* Espaciado entre enlaces */
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    /* Blanco tenue por defecto */
+    letter-spacing: 2px;
+}
+
+.nav-links a:hover {
+    color: var(--color-text-light);
+    /* Blanco brillante al pasar el ratón */
+}
+
+/* Título Central del Hero */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid var(--color-text-light);
+    /* Recuadro blanco */
+    padding: 20px 60px;
+}
+
+.hero-title .first-name {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.hero-title .last-name {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 8px;
+    /* Espaciado amplio entre letras */
+    color: var(--color-text-main);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    /* Línea divisoria fina */
+    padding-top: 10px;
+    margin-top: 5px;
+}
+
+/* =========================================
+   4. ESTILOS SECCIÓN SOBRE MÍ
+   ========================================= */
+.about-section {
+    padding: 100px 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    /* Imagen más estrecha que el texto */
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image-container {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    /* Efecto Blanco y Negro (requiere que la imagen sea en color) */
+    filter: grayscale(100%);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    /* Sombra suave */
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* =========================================
+   5. ESTILOS SECCIÓN PORTAFOLIO
+   ========================================= */
+.portfolio-section {
+    padding: 50px 0;
+}
+
+.portfolio-grid {
+    display: grid;
+    /* 4 columnas automáticas, se adaptan en móvil */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    /* Espaciado muy pequeño entre fotos */
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    /* Evita que la imagen sobresalga en zoom */
+    aspect-ratio: 1 / 1;
+    /* Mantiene el elemento cuadrado */
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ajusta la imagen sin deformarla */
+    filter: grayscale(100%);
+    /* B&N por defecto */
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Subtítulo (Caption) con fondo de color */
+.portfolio-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    transform: translateY(100%);
+    /* Oculto por defecto debajo */
+    transition: transform 0.4s ease;
+    z-index: 2;
+}
+
+.portfolio-caption h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Clases de variante para el color del pie */
+.portfolio-caption.red {
+    background-color: var(--color-accent-red);
+}
+
+.portfolio-caption.dark {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo negro translúcido */
+}
+
+/* Variación Minimalista: B&N siempre, caption oscuro */
+.portfolio-item.minimalist img {
+    filter: grayscale(100%);
+}
+
+/* --- Efectos Hover --- */
+.portfolio-item:hover img {
+    transform: scale(1.1);
+    /* Zoom suave al pasar ratón */
+    filter: grayscale(0%);
+    /* La imagen cobra color */
+}
+
+.portfolio-item:hover .portfolio-caption {
+    transform: translateY(0%);
+    /* Muestra el pie al pasar ratón */
+}
+
+/* =========================================
+   6. ESTILOS SECCIÓN CONTACTO
+   ========================================= */
+.contact-section {
+    padding: 100px 0;
+    border-top: 1px solid var(--color-border);
+    /* Línea divisoria */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Formulario más ancho que iconos */
+    gap: 50px;
+    align-items: center;
+}
+
+/* Estilos del Formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #1a1a1a;
+    /* Gris muy oscuro para inputs */
+    border: 1px solid #333;
+    color: var(--color-text-main);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-accent-red);
+    /* Borde rojo al enfocar */
+}
+
+textarea {
+    resize: vertical;
+    /* Permite cambiar tamaño verticalmente */
+}
+
+.btn-submit {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-accent-red);
+    color: var(--color-text-light);
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-accent-red-hover);
+    /* Rojo más oscuro al hover */
+}
+
+/* Iconos Sociales */
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+    /* Distribución uniforme */
+    flex-wrap: wrap;
+    /* Permite salto de línea en móvil */
+    gap: 20px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-accent-red);
+    /* Círculo rojo */
+    color: var(--color-text-light);
+    border-radius: 50%;
+    /* Forma circular */
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+    /* Efecto pop y rotación */
+    background-color: var(--color-accent-red-hover);
+}
+
+/* =========================================
+   7. ESTILOS PIE DE PÁGINA (FOOTER)
+   ========================================= */
+.footer {
+    background-color: var(--color-bg-darker);
+    color: var(--color-text-muted);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    border-top: 1px solid #1a1a1a;
+}
+
+/* =========================================
+   8. MEDIA QUERIES (Responsividad)
+   ========================================= */
+
+/* Tablets y pantallas medianas (menos de 992px) */
+@media (max-width: 992px) {
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        /* Pasa a una sola columna */
+        gap: 40px;
+        text-align: center;
+    }
+
+    .about-image-container {
+        order: -1;
+        /* Mueve la imagen arriba del texto en móvil */
+    }
+
+    .hero-title .first-name {
+        font-size: 3rem;
+    }
+}
+
+/* Móviles (menos de 600px) */
+@media (max-width: 600px) {
+    html {
+        font-size: 14px;
+        /* Pequeña reducción de fuente base */
+    }
+
+    .navbar {
+        padding: 15px 0;
+    }
+
+    .nav-links {
+        gap: 15px;
+        /* Menor espacio entre enlaces */
+    }
+
+    .hero-title {
+        padding: 15px 30px;
+    }
+
+    .hero-title .first-name {
+        font-size: 2.5rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        /* Una foto por fila en móvil */
+    }
+}
+
+
+/* =========================================
+   cambio de idioma
+   ========================================= */
+.language-selector {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.language-selector button {
+    background: transparent;
+    border: 1px solid var(--color-text-muted);
+    color: var(--color-text-muted);
+    padding: 2px 8px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    transition: all 0.3s;
+}
+
+.language-selector button:hover {
+    border-color: var(--color-accent-red);
+    color: var(--color-accent-red);
+    background-color: #b51e18;
+}
+
+/* =========================================
+   /* Configuración del contenedor del carrusel */
+/* ========================================= */
+.carousel-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    /* Por detrás del texto y el overlay */
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    /* Oculta por defecto */
+    transition: opacity 0.3s ease-in-out;
+    /* Transición de desvanecimiento */
+    z-index: 1;
+}
+
+/* Clase activa para mostrar la imagen actual */
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Asegura que el Hero tenga posición relativa */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background-image: none !important;
+    /* Eliminamos el fondo estático anterior */
+}
+
+/* Estilo general de los botones flotantes */
+/* ========================================= */
+/* Contenedor principal */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Espacio entre los dos botones */
+    z-index: 1000;
+}
+
+/* Estilo general de los botones flotantes */
+.float-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    /* Forma cuadrada redondeada como en tu imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, opacity 0.3s;
+    text-decoration: none;
+}
+
+
+/* ========================================= */
+/* Botón WhatsApp */
+.whatsapp {
+    background-color: #b51e18;
+}
+
+/* Botón Volver Arriba (Azul) */
+.back-to-top {
+    background-color: #b51e18;
+    opacity: 0;
+    /* Oculto por defecto */
+    visibility: hidden;
+}
+
+/* Clase para mostrar el botón cuando se hace scroll */
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.float-btn:hover {
+    transform: scale(1.1);
+}
+
+/* =========================================
+Drowndownmenu
+========================================= */
+
+/* =========================================
+   9. DROPDOWN MENU HORIZONTAL CON SUBMENÚS
+   ========================================= */
+
+/* Panel contenedor horizontal principal */
+.horizontal-dropdown-menu {
+    position: absolute;
+    top: 80px;
+    /* Ajustar a la altura exacta de tu navbar */
+    left: 0;
+    width: 100%;
+    background-color: #050505;
+    /* Color de fondo --color-bg-darker */
+    border-bottom: 2px solid var(--color-accent-red);
+    /* Línea inferior roja */
+    z-index: 99;
+    opacity: 0;
+    /* Oculto por defecto */
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    padding: 20px 0;
+}
+
+/* Estado activo del panel principal (controlado por JS) */
+.horizontal-dropdown-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Flexbox para alinear horizontalmente las 4 categorías principales */
+.dropdown-main-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Alinea los bloques al inicio de la barra */
+    gap: 60px;
+    /* Separación amplia entre categorías principales */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Contenedor de cada categoría principal */
+.dropdown-main-links>li {
+    position: relative;
+    /* Necesario para posicionar el submenú de forma absoluta respecto a este elemento */
+}
+
+/* Enlaces principales (Retratos, Paisajes, etc.) */
+.dropdown-main-links>li>a {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+.dropdown-main-links>li>a:hover {
+    color: var(--color-accent-red);
+    border-bottom-color: var(--color-accent-red);
+}
+
+/* Submenús Verticales (Ocultos por defecto) */
+.vertical-submenu {
+    position: absolute;
+    top: 100%;
+    /* Se posiciona inmediatamente debajo del enlace padre */
+    left: 0;
+    min-width: 180px;
+    /* Ancho mínimo para que los textos no se corten */
+    background-color: #0a0a0a;
+    /* Fondo --color-bg-main */
+    border-left: 2px solid var(--color-accent-red);
+    /* Detalle de línea roja a la izquierda */
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(5px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 100;
+}
+
+/* Enlaces de los submenús (Moda, Estudio, Urbano, etc.) */
+.vertical-submenu a {
+    display: block;
+    padding: 8px 15px;
+    color: var(--color-text-main);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+/* Hover de los elementos del submenú */
+.vertical-submenu a:hover {
+    color: var(--color-text-light);
+    background-color: #141414;
+    /* Feedback visual sutil de fondo */
+    padding-left: 20px;
+    /* Desplazamiento interactivo */
+}
+
+/* ACTIVACIÓN POR HOVER: Muestra el submenú vertical cuando el cursor está sobre el li padre */
+.dropdown-main-links>li:hover .vertical-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+
+/* ==========================================================================
+   SISTEMA DE GALERÍA Y COMPONENTES DE NAVEGACIÓN DENTRO DEL SUBMENÚ
+   ========================================================================== */
+
+/* Ajuste del contenedor interno del submenú para soportar flexbox bicolumna */
+.dropdown-nav-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+}
+
+/* Fijar el tamaño de la columna del menú de textos */
+.dropdown-main-links {
+    flex: 0 0 220px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Área contenedor del visualizador de fotos derecho */
+.dropdown-gallery-container {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 65vh;
+    padding-right: 8px;
+}
+
+/* Paneles de transición orgánicos */
+.dropdown-gallery-pane {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.dropdown-gallery-pane.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Cuadrícula estricta de 3 en 3 columnas */
+.dropdown-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+/* Cajas contenedoras de las imágenes */
+.dropdown-gallery-item {
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #111;
+    aspect-ratio: 3 / 2;
+    border: 1px solid var(--color-border);
+    transition: border-color 0.3s ease;
+}
+
+.dropdown-gallery-item:hover {
+    border-color: var(--color-accent-red);
+}
+
+.dropdown-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.dropdown-gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* --- INTERFAZ DEL VISUALIZADOR MODAL --- */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 5, 5, 0.96);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-image-wrapper {
+    position: relative;
+    max-width: 75%;
+    max-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-modal-content {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 2px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+    transform: scale(0.97);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-modal.show .gallery-modal-content {
+    transform: scale(1);
+}
+
+/* Botón de cierre */
+.gallery-modal-close {
+    position: absolute;
+    top: 35px;
+    right: 45px;
+    color: var(--color-text-main);
+    font-size: 42px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    z-index: 10;
+}
+
+.gallery-modal-close:hover {
+    color: var(--color-accent-red);
+}
+
+/* Botones Direccionales (Anterior y Siguiente) */
+.modal-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15, 15, 15, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-text-main);
+    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.modal-nav-btn:hover {
+    background: var(--color-accent-red);
+    color: var(--color-text-light);
+    border-color: var(--color-accent-red);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.prev-btn {
+    left: 5%;
+}
+
+.next-btn {
+    right: 5%;
+}
+
+/* Scrollbar estilizada para el panel de fotos */
+.dropdown-gallery-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.dropdown-gallery-container::-webkit-scrollbar-thumb {
+    background: var(--color-accent-red);
+    border-radius: 2px;
+}
+
+
+/* ==========================================================================
+   ADAPTACIÓN RESPONSIVE (TABLETS Y SMARTPHONES)
+   ========================================================================== */
+
+/* --- 1. TABLETS Y PANTALLAS MEDIANAS (Hasta 992px) --- */
+@media screen and (max-width: 992px) {
+
+    /* Ajuste del contenedor interno del menú para apilarse verticalmente */
+    .dropdown-nav-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Los enlaces principales ocupan todo el ancho disponible */
+    .dropdown-main-links {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    /* Permitir que el área de fotos use todo el ancho y limitar su altura */
+    .dropdown-gallery-container {
+        width: 100%;
+        max-height: 50vh;
+    }
+
+    /* Reducción de la cuadrícula a 2 columnas para equilibrar el espacio en tablets */
+    .dropdown-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    /* Ajuste de los botones direccionales de la modal */
+    .modal-nav-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .prev-btn {
+        left: 2%;
+    }
+
+    .next-btn {
+        right: 2%;
+    }
+}
+
+/* --- 2. SMARTPHONES Y PANTALLAS PEQUEÑAS (Hasta 576px) --- */
+@media screen and (max-width: 576px) {
+
+    /* Reajuste del submenú desplegable horizontal principal para permitir scroll móvil si es necesario */
+    .horizontal-dropdown-menu {
+        padding: 15px;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+
+    /* Estilo para los submenús verticales integrados en móviles */
+    .vertical-submenu {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-width: 100%;
+        background-color: rgba(20, 20, 20, 0.5);
+        box-shadow: none;
+        padding: 5px 0 5px 15px;
+        /* Indentación para denotar jerarquía */
+        margin-top: 5px;
+        border-left: 2px solid var(--color-accent-red);
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    /* Cuadrícula estricta de 1 sola columna para smartphones (evita imágenes diminutas) */
+    .dropdown-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    /* Optimización del contenedor del visor modal para no recortar la imagen en pantallas estrechas */
+    .modal-image-wrapper {
+        max-width: 90%;
+        max-height: 70vh;
+    }
+
+    .gallery-modal-content {
+        max-height: 70vh;
+    }
+
+    /* Reposicionamiento táctil inferior de los botones de control para no obstruir la imagen */
+    .modal-nav-btn {
+        top: auto;
+        bottom: 5%;
+        transform: none;
+        width: 55px;
+        height: 55px;
+        border-radius: 8px;
+        /* Diseño más accesible para pulgares */
+        background: rgba(15, 15, 15, 0.85);
+    }
+
+    .modal-nav-btn:hover {
+        transform: scale(1.02);
+    }
+
+    .prev-btn {
+        left: 15%;
+    }
+
+    .next-btn {
+        right: 15%;
+    }
+
+    /* Botón de cierre más grande y accesible para interacción táctil en la esquina superior */
+    .gallery-modal-close {
+        top: 20px;
+        right: 25px;
+        font-size: 38px;
+        padding: 10px;
+    }
+}
+
+
+.dropdown-gallery-pane {
+    display: none;
+    scroll-margin-top: 140px; /* Ajusta según el alto en px de tu navbar móvil */
+}
+
+.dropdown-gallery-pane.active {
+    display: block;
+}
+
+
+/* Estilos RGPD Formulario */
+.checkbox-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.privacy-label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #cccccc;
+    font-size: 0.9rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.privacy-label input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #444444;
+    background-color: #1a1a1a;
+    border-radius: 2px;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    flex-shrink: 0;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.privacy-label input[type="checkbox"]:checked {
+    background-color: #e60000;
+    border-color: #e60000;
+}
+
+.privacy-label input[type="checkbox"]:checked::before {
+    content: "✓";
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.privacy-label input[type="checkbox"]:invalid {
+    border-color: #e60000;
+}
+
+.privacy-label a {
+    color: #e60000;
+    text-decoration: underline;
+}
+
+.privacy-label a:hover {
+    color: #ff3333;
+}
+
+.privacy-info {
+    margin-top: 0.8rem;
+    padding: 0.8rem;
+    background-color: #121212;
+    border-left: 2px solid #e60000;
+    font-size: 0.75rem;
+    color: #888888;
+    line-height: 1.4;
+}
+
+.privacy-info p {
+    margin: 0 0 0.2rem 0;
+}
+
+.privacy-info p:last-child {
+    margin-bottom: 0;
+}

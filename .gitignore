@@ -7,3 +7,8 @@ resources/_gen/
 .DS_Store
 .vscode/
 *.log
+*.dng
+*.cr2
+*.arw
+*.nef
+public/
